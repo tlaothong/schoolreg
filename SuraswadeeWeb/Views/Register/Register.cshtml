@@ -1,0 +1,239 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_BlankLayout.cshtml";
+}
+
+<div class="well">
+    <h2 class="text-center">แบบฟอร์มสมัคร โรงเรียนสุรัสวดี</h2>
+
+    @* ข้อมูลผู้ปกครอง *@
+    <div>
+        <h3 class="text-center">ข้อมูลผู้ปกครอง</h3>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 control-label">คำนำหน้าชื่อ ผู้ปกครอง</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="นาย,นาง,นางสาว">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ชื่อ ผู้ปกครอง</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">นามสกุล ผู้ปกครอง</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">อยู่บ้านเลขที่</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">หมู่ที่</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ถนน</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ตำบล</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">อำเภอ</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">จังหวัด</label>
+                <div class="col-md-6">
+                    <select class="form-control">
+                        <option>ขอนแก่น</option>
+                        <option>กรุงเทพมหานคร</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">รหัสไปรษณี</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">อาชีพ</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">สถานที่ทำงาน</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">หมายเลขโทรศัพท์ ผู้ปกครอง</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">มีฐานะเป็น</label>
+                <div class="col-md-6">
+                    <select class="form-control">
+                        <option>ผู้ปกครอง</option>
+                        <option>บิดา</option>
+                        <option>มารดา</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+   
+    @* ข้อมูลนักเรียน *@
+    <div>
+        <h3 class="text-center">ข้อมูลนักเรียน</h3>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 control-label">หลักสูตรที่สมัคร</label>
+                <div class="col-md-6">
+                    <select class="form-control">
+                        <option>เตรียมอนุบาล</option>
+                        <option>อนุบาล 1</option>
+                        <option>อนุบาล 2</option>
+                        <option>ปฐม 1</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ปีการศึกษา</label>
+                <div class="col-md-6">
+                    <select class="form-control">
+                        <option>2557</option>
+                        <option>2558</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">คำนำหน้าชื่อ นักเรียน</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="เด็กชาย,เด็กหญิง">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ชื่อ นักเรียน</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">นามสกุล นักเรียน</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ชื่อเล่น</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">วันเดือนปีเกิด</label>
+                <div class="col-md-6">
+                    <input type="date" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">เคยศึกษาที่โรงเรียน</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ระดับ</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    @* หลักฐานและค่าธรรมเนียม *@
+    <div>
+        <h3 class="text-center">หลักฐานและค่าธรรมเนียม</h3>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 control-label">สำเนาทะเบียนบ้าน</label>
+                <div class="col-md-6">
+                    <input type="file">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">สำเนาสูติบัติ</label>
+                <div class="col-md-6">
+                    <input type="file">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">รูปถ่าย</label>
+                <div class="col-md-6">
+                    <input type="file">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">สมุดรายงานประจำตัวเด็ก (ถ้ามี)</label>
+                <div class="col-md-6">
+                    <input type="file">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ค่าธรรมเนียมการเรียน</label>
+                <div class="col-md-6">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> เบิกได้ จำนวน
+                        </label>
+                        <label>
+                            <input type="number" class="form-control">
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> เบิกไม่ได้ จำนวน
+                        </label>
+                        <label>
+                            <input type="number" class="form-control">
+                        </label>
+                    </div>        
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ค่าธรรมเนียมอื่นๆ</label>
+                <div class="col-md-6">
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <a href="/Register/RegisterCompleted" class="btn btn-primary btn-lg">ส่งใบสมัคร</a>
+    </div>
+</div>
