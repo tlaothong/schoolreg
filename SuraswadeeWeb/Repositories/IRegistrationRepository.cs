@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace SuraswadeeWeb.Repositories
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IRegistrationRepository
     {
         /// <summary>
