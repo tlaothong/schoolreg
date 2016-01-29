@@ -13,5 +13,10 @@ namespace SuraswadeeWeb.Controllers
         {
             return View();
         }
+        // GET: AdminManage
+        public ActionResult StudentDetail()
+        {
+            return View();
+        }
     }
 }
