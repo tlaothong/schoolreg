@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SuraswadeeWeb.Models;
+using SuraswadeeWeb.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,14 +10,24 @@ namespace SuraswadeeWeb.Controllers
 {
     public class RegisterController : Controller
     {
-        // GET: Register
+        //private IRegistrationRepository repo;
+
+        //public RegisterController(IRegistrationRepository repo)
+        //{
+        //    this.repo = repo;
+        //}
+               // GET: Register
         public ActionResult Register()
         {
-            return View();
+            var student = new Student();
+            return View(student);
         }
 
-        public ActionResult RegisterCompleted()
+        [HttpPost]
+        public ActionResult RegisterCompleted(Student model)
         {
+            var repo = new RegistrationRepository();
+            repo.Register(model);
             return View();
         }
     }

@@ -13,7 +13,7 @@ namespace SuraswadeeWeb.Repositories
         /// <summary>
         /// table name
         /// </summary>
-        private const string tableName = "schoolreg.Student";
+        private const string tableName = "echecker.schoolregStudent";
 
         /// <summary>
         /// 
@@ -66,6 +66,7 @@ namespace SuraswadeeWeb.Repositories
             if (student!=null)
             {
                 student.id = Guid.NewGuid().ToString();
+                student.CreateDateTime = DateTime.Now;
                 var coltn = MongoUtil.GetCollection<Student>(tableName);
                 coltn.InsertOne(student);
             }
