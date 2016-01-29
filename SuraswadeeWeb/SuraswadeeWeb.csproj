@@ -200,8 +200,12 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\CourseTypeList.cs" />
+    <Compile Include="Models\CourseYearList.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ParentStatusList.cs" />
+    <Compile Include="Models\ProvinceList.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="MongoAccess\MongoUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -365,6 +369,7 @@
     <Content Include="Views\Shared\_BlankLayout.cshtml" />
     <Content Include="Views\Register\Register.cshtml" />
     <Content Include="Views\Register\RegisterCompleted.cshtml" />
+    <Content Include="Views\AdminManage\StudentDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -20,6 +20,14 @@ namespace SuraswadeeWeb.Controllers
         public ActionResult Register()
         {
             var student = new Student();
+            ViewBag.ProvinceList = ProvinceList.GetAllList().ToList();
+
+            ViewBag.ParentStatusList = ParentStatusList.GetAllList().ToList();
+
+            ViewBag.CourseTypeList = CourseTypeList.GetAllList().ToList();
+
+            ViewBag.CourseYearList = CourseYearList.GetAllList().ToList();
+
             return View(student);
         }
 

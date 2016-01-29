@@ -71,11 +71,11 @@ namespace SuraswadeeWeb.Models
         /// <summary>
         /// 
         /// </summary>
-        public string ParrentMoblie { get; set; }
+        public string ParentMoblie { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string ParrentStatus { get; set; }
+        public string ParentStatus { get; set; }
         /// <summary>
         /// 
         /// </summary>

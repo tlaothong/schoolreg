@@ -42,143 +42,61 @@
             <div class="form-group">
                 <label class="col-md-4 control-label">หมู่ที่</label>
                 <div class="col-md-6">
-                    @Html.TextBoxFor(model => model.ParentMoo, new { @type = "text", @class = "form-control", @placeholder = "หมู่ที่", @required = "required" })
+                    @Html.TextBoxFor(model => model.ParentMoo, new { @type = "text", @class = "form-control", @placeholder = "หมู่ที่" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">ถนน</label>
                 <div class="col-md-6">
-                    @Html.TextBoxFor(model => model.ParentDistrict, new { @type = "text", @class = "form-control", @placeholder = "หมู่ที่", @required = "required" })
+                    @Html.TextBoxFor(model => model.ParentDistrict, new { @type = "text", @class = "form-control", @placeholder = "ถนน" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">ตำบล</label>
                 <div class="col-md-6">
-                    @Html.TextBoxFor(model => model.ParentTambon, new { @type = "text", @class = "form-control", @placeholder = "หมู่ที่", @required = "required" })
+                    @Html.TextBoxFor(model => model.ParentTambon, new { @type = "text", @class = "form-control", @placeholder = "ตำบล" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">อำเภอ</label>
                 <div class="col-md-6">
-                    @Html.TextBoxFor(model => model.ParentAmpere, new { @type = "text", @class = "form-control", @placeholder = "หมู่ที่", @required = "required" })
+                    @Html.TextBoxFor(model => model.ParentAmpere, new { @type = "text", @class = "form-control", @placeholder = "อำเภอ" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">จังหวัด</label>
                 <div class="col-md-6">
-                    <select class="form-control">
-                        <option>กรุงเทพมหานคร</option>
-                        <option>กระบี่</option>
-                        <option>กาญจนบุรี</option>
-                        <option>กาฬสินธุ์</option>
-                        <option>กำแพงเพชร</option>
-                        <option>ขอนแก่น</option>
-                        <option>จันทบุรี</option>
-                        <option>ฉะเชิงเทรา</option>
-                        <option>ชลบุรี</option>
-                        <option>ชัยนาท</option>
-                        <option>ชัยภูมิ</option>
-                        <option>ชุมพร</option>
-                        <option>เชียงราย</option>
-                        <option>เชียงใหม่</option>
-                        <option>ตรัง</option>
-                        <option>ตราด</option>
-                        <option>ตาก</option>
-                        <option>นครนายก</option>
-                        <option>นครปฐม</option>
-                        <option>นครพนม</option>
-                        <option>นครราชสีมา</option>
-                        <option>นครศรีธรรมราช</option>
-                        <option>นครสวรรค์</option>
-                        <option>นนทบุรี</option>
-                        <option>นราธิวาส</option>
-                        <option>น่าน</option>
-                        <option>บึงกาฬ</option>
-                        <option>บุรีรัมย์</option>
-                        <option>ปทุมธานี</option>
-                        <option>ประจวบคีรีขันธ์</option>
-                        <option>ปราจีนบุรี</option>
-                        <option>ปัตตานี</option>
-                        <option>พระนครศรีอยุธยา</option>
-                        <option>พังงา</option>
-                        <option>พัทลุง</option>
-                        <option>พิจิตร</option>
-                        <option>พิษณุโลก</option>
-                        <option>เพชรบุรี</option>
-                        <option>เพชรบูรณ์</option>
-                        <option>แพร่</option>
-                        <option>พะเยา</option>
-                        <option>ภูเก็ต</option>
-                        <option>มหาสารคาม</option>
-                        <option>มุกดาหาร</option>
-                        <option>แม่ฮ่องสอน</option>
-                        <option>ยะลา</option>
-                        <option>ยโสธร</option>
-                        <option>ร้อยเอ็ด</option>
-                        <option>ระนอง</option>
-                        <option>ระยอง</option>
-                        <option>ราชบุรี</option>
-                        <option>ลพบุรี</option>
-                        <option>ลำปาง</option>
-                        <option>ลำพูน</option>
-                        <option>เลย</option>
-                        <option>ศรีสะเกษ</option>
-                        <option>สกลนคร</option>
-                        <option>สงขลา</option>
-                        <option>สตูล</option>
-                        <option>สมุทรปราการ</option>
-                        <option>สมุทรสงคราม</option>
-                        <option>สมุทรสาคร</option>
-                        <option>สระแก้ว</option>
-                        <option>สระบุรี</option>
-                        <option>สิงห์บุรี</option>
-                        <option>สุโขทัย</option>
-                        <option>สุพรรณบุรี</option>
-                        <option>สุราษฎร์ธานี</option>
-                        <option>สุรินทร์</option>
-                        <option>หนองคาย</option>
-                        <option>หนองบัวลำภู</option>
-                        <option>อ่างทอง</option>
-                        <option>อุดรธานี</option>
-                        <option>อุทัยธานี</option>
-                        <option>อุตรดิตถ์</option>
-                        <option>อุบลราชธานี</option>
-                        <option>อำนาจเจริญ</option>
-                    </select>
+                    @Html.DropDownListFor(model => model.ParentProvince, @ViewBag.ProvinceList as List<SelectListItem> , new { @class = "form-control", required = true })                    
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">รหัสไปรษณี</label>
                 <div class="col-md-6">
-                    <input type="text" class="form-control">
+                    @Html.TextBoxFor(model => model.ParentZipcode, new { @type = "text", @class = "form-control", @placeholder = "รหัสไปรษณี", @required = "required" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">อาชีพ</label>
                 <div class="col-md-6">
-                    <input type="text" class="form-control">
+                    @Html.TextBoxFor(model => model.ParentOccupation, new { @type = "text", @class = "form-control", @placeholder = "อาชีพ", @required = "required" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">สถานที่ทำงาน</label>
                 <div class="col-md-6">
-                    <input type="text" class="form-control">
+                    @Html.TextBoxFor(model => model.ParentOccupationLocation, new { @type = "text", @class = "form-control", @placeholder = "สถานที่ทำงาน" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">หมายเลขโทรศัพท์ ผู้ปกครอง</label>
                 <div class="col-md-6">
-                    <input type="text" class="form-control">
+                    @Html.TextBoxFor(model => model.ParentMoblie, new { @type = "text", @class = "form-control", @placeholder = "หมายเลขโทรศัพท์ ผู้ปกครอง", @required = "required" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">มีฐานะเป็น</label>
                 <div class="col-md-6">
-                    <select class="form-control">
-                        <option>ผู้ปกครอง</option>
-                        <option>บิดา</option>
-                        <option>มารดา</option>
-                    </select>
+                    @Html.DropDownListFor(model => model.ParentStatus, @ViewBag.ParentStatusList as List<SelectListItem>, new { @class = "form-control", required = true })
                 </div>
             </div>
         </div>
@@ -191,69 +109,55 @@
             <div class="form-group">
                 <label class="col-md-4 control-label">หลักสูตรที่สมัคร</label>
                 <div class="col-md-6">
-                    <select class="form-control">
-                        <option selected>เตรียมอนุบาล</option>
-                        <option>อนุบาลศึกษาปีที่ 1</option>
-                        <option>อนุบาลศึกษาปีที่ 2</option>
-                        <option>อนุบาลศึกษาปีที่ 3</option>
-                        <option>ประถมศึกษาปีที่ 1</option>
-                        <option>ประถมศึกษาปีที่ 2</option>
-                        <option>ประถมศึกษาปีที่ 3</option>
-                        <option>ประถมศึกษาปีที่ 4</option>
-                        <option>ประถมศึกษาปีที่ 5</option>
-                        <option>ประถมศึกษาปีที่ 6</option>
-                    </select>
+                    @Html.DropDownListFor(model => model.CourseType, @ViewBag.CourseTypeList as List<SelectListItem>, new { @class = "form-control", required = true })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">ปีการศึกษา</label>
                 <div class="col-md-6">
-                    <select class="form-control">
-                        <option>2557</option>
-                        <option>2558</option>
-                    </select>
+                   @Html.DropDownListFor(model => model.Year, @ViewBag.CourseYearList as List<SelectListItem>, new { @class = "form-control", required = true })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">คำนำหน้าชื่อ นักเรียน</label>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" placeholder="เด็กชาย,เด็กหญิง">
+                    @Html.TextBoxFor(model => model.StudentTitle, new { @type = "text", @class = "form-control", @placeholder = "เด็กชาย,เด็กหญิง", @required = "required" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">ชื่อ นักเรียน</label>
                 <div class="col-md-6">
-                    <input type="text" class="form-control">
+                    @Html.TextBoxFor(model => model.StudentFIrstName, new { @type = "text", @class = "form-control", @placeholder = "ชื่อ นักเรียน", @required = "required" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">นามสกุล นักเรียน</label>
                 <div class="col-md-6">
-                    <input type="text" class="form-control">
+                    @Html.TextBoxFor(model => model.StudentLastName, new { @type = "text", @class = "form-control", @placeholder = "นามสกุล นักเรียน", @required = "required" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">ชื่อเล่น</label>
                 <div class="col-md-6">
-                    <input type="text" class="form-control">
+                    @Html.TextBoxFor(model => model.StudentNickName, new { @type = "text", @class = "form-control", @placeholder = "ชื่อเล่น", @required = "required" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">วันเดือนปีเกิด</label>
                 <div class="col-md-6">
-                    <input type="date" class="form-control">
+                    @Html.TextBoxFor(model => model.StudentBirthDay, new { @type = "date", @class = "form-control", @placeholder = "วันเดือนปีเกิด", @required = "required" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">เคยศึกษาที่โรงเรียน</label>
                 <div class="col-md-6">
-                    <input type="text" class="form-control">
+                    @Html.TextBoxFor(model => model.StudentSchool, new { @type = "text", @class = "form-control", @placeholder = "เคยศึกษาที่โรงเรียน" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">ระดับ</label>
                 <div class="col-md-6">
-                    <input type="text" class="form-control">
+                    @Html.TextBoxFor(model => model.StudentSchool, new { @type = "text", @class = "form-control", @placeholder = "ระดับ" })
                 </div>
             </div>
 
@@ -297,7 +201,7 @@
                             <input type="checkbox"> เบิกได้ จำนวน
                         </label>
                         <label>
-                            <input type="number" class="form-control">
+                            @Html.TextBoxFor(model => model.RefunCost, new { @type = "text", @class = "form-control", @placeholder = "เบิกได้ จำนวน" })
                         </label>
                     </div>
                     <div class="checkbox">
@@ -305,7 +209,7 @@
                             <input type="checkbox"> เบิกไม่ได้ จำนวน
                         </label>
                         <label>
-                            <input type="number" class="form-control">
+                            @Html.TextBoxFor(model => model.NoRefunCost, new { @type = "text", @class = "form-control", @placeholder = "เบิกไม่ได้ จำนวน" })
                         </label>
                     </div>        
                 </div>
@@ -313,7 +217,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label">ค่าธรรมเนียมอื่นๆ</label>
                 <div class="col-md-6">
-                    <textarea class="form-control" rows="3"></textarea>
+                    @Html.TextAreaFor(model => model.CostEtc, new { @class = "form-control", @placeholder = "ค่าธรรมเนียมอื่นๆ" })
                 </div>
             </div>
         </div>
