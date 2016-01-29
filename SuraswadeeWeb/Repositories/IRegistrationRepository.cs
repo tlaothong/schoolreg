@@ -19,7 +19,7 @@ namespace SuraswadeeWeb.Repositories
         /// <param name="courseType"></param>
         /// <param name="year"></param>
         /// <returns></returns>
-        IEnumerable<Student> GetPendingStudent(string schoolId,string courseType ,string year);
+        IEnumerable<Student> GetPendingStudent(string schoolId);
         /// <summary>
         /// 
         /// </summary>

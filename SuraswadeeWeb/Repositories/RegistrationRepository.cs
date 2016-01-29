@@ -18,14 +18,12 @@ namespace SuraswadeeWeb.Repositories
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="schoolId"></param>
-        /// <param name="courseType"></param>
-        /// <param name="year"></param>
+        /// <param name="schoolId"></param>       
         /// <returns></returns>
-        public IEnumerable<Student> GetPendingStudent(string schoolId, string courseType, string year)
+        public IEnumerable<Student> GetPendingStudent(string schoolId)
         {
             var coltn = MongoUtil.GetCollection<Student>(tableName);
-            var result = coltn.Find(x => x.SchoolId == schoolId && x.CourseType == courseType && x.Year == year && x.IsVerified == false).ToList();
+            var result = coltn.Find(x => x.SchoolId == schoolId && x.IsVerified == false).ToList();
             return result != null ? result : new List<Student>();
         }
 

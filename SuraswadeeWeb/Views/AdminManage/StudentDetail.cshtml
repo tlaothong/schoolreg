@@ -1,4 +1,5 @@
-﻿
+﻿@model SuraswadeeWeb.Models.Student
+
 @{
     ViewBag.Title = "StudentDetail";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -16,74 +17,73 @@
             <div class="form-group">
                 <label class="col-md-4 control-label">ชื่อ-นามสกุล</label>
                 <div class="col-md-6">
-                    <h5>นาย พง พังงง</h5>
+                    <h5>@Model.ParentTitle @Model.ParentFirstName @Model.ParentLastName</h5>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">อยู่บ้านเลขที่</label>
                 <div class="col-md-6">
-                    <h5>191/2</h5>
+                    <h5>@Model.ParentHomeNo</h5>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">หมู่ที่</label>
                 <div class="col-md-6">
-                    <h5>8</h5>
+                    <h5>@Model.ParentMoo</h5>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">ถนน</label>
                 <div class="col-md-6">
-                    <h5>เลี่ยงเมือง</h5>
+                    <h5>@Model.ParentDistrict</h5>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">ตำบล</label>
                 <div class="col-md-6">
-                    <h5>เมืองเก่า</h5>
+                    <h5>@Model.ParentTambon</h5>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">อำเภอ</label>
                 <div class="col-md-6">
-                    <h5>เมือง</h5>
+                    <h5>@Model.ParentAmpere</h5>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">จังหวัด</label>
                 <div class="col-md-6">
-                    <h5>ขอนแก่น</h5>
+                    <h5>@ViewBag.Province</h5>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">รหัสไปรษณี</label>
                 <div class="col-md-6">
-                    <h5>40000</h5>
+                    <h5>@Model.ParentProvince</h5>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">อาชีพ</label>
                 <div class="col-md-6">
-                    <h5>รับราชการ</h5>
+                    <h5>@Model.ParentOccupation</h5>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">สถานที่ทำงาน</label>
                 <div class="col-md-6">
-                    <h5>บริษัท ฟฟฟฟฟฟ</h5>
+                    <h5>@Model.ParentOccupationLocation</h5>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">หมายเลขโทรศัพท์ ผู้ปกครอง</label>
                 <div class="col-md-6">
-                    <h5>0850053368</h5>
+                    <h5>@Model.ParentMoblie</h5>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">มีฐานะเป็น</label>
                 <div class="col-md-6">
-                    <h5>ผู้ปกครอง</h5>
-
+                    <h5>@ViewBag.ParentStatus</h5>
                 </div>
             </div>
         </form>
@@ -95,49 +95,49 @@
             <div class="form-group">
                 <label class="col-md-4 control-label">หลักสูตรที่สมัคร</label>
                 <div class="col-md-6">
-                    <h5>เตรียมอนุบาล</h5>
+                    <h5>@ViewBag.CourseType</h5>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">ปีการศึกษา</label>
                 <div class="col-md-6">
-                    <h5>2559</h5>
+                    <h5>@ViewBag.CourseYear</h5>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">ชื่อ-นามสกุล</label>
                 <div class="col-md-6">
-                    <h5>เด็กชาย แดง พังงง</h5>
+                    <h5>@Model.ParentTitle @Model.StudentFIrstName @Model.StudentLastName</h5>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">ชื่อเล่น</label>
                 <div class="col-md-6">
-                    <h5>แดง</h5>
+                    <h5>@Model.StudentNickName</h5>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">วันเดือนปีเกิด</label>
                 <div class="col-md-6">
-                    <h5>4 เมษายน 2539</h5>
+                    <h5>@Model.StudentBirthDay.ToString("dd/MM/yyyy")</h5>
                 </div>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label class="col-md-4 control-label">อายุ</label>
                 <div class="col-md-6">
                     <h5>10 ขวบ</h5>
                 </div>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label class="col-md-4 control-label">เคยศึกษาที่โรงเรียน</label>
                 <div class="col-md-6">
-                    <h5>ขอนแก่นวิทยายน</h5>
+                    <h5>@Model.StudentSchool</h5>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">ระดับ</label>
                 <div class="col-md-6">
-                    <h5>เตรียมอนุบาล</h5>
+                    <h5>@Model.StudentSchoolGrade</h5>
                 </div>
             </div>
 
@@ -179,7 +179,7 @@
                             เบิกได้ จำนวน
                         </label>
                         <label>
-                            <span> 25,000 บาท</span>
+                            <span> @Model.RefunCost บาท</span>
                         </label>
                     </div>
                     <div class="checkbox">
@@ -187,7 +187,7 @@
                             เบิกไม่ได้ จำนวน
                         </label>
                         <label>
-                            <span> 0 บาท</span>
+                            <span> @Model.NoRefunCost บาท</span>
                         </label>
                     </div>
                 </div>
@@ -195,7 +195,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label">ค่าธรรมเนียมอื่นๆ</label>
                 <div class="col-md-6">
-                    <span></span>
+                    <span>@Model.CostEtc</span>
                 </div>
             </div>
         </div>
@@ -205,7 +205,7 @@
             <a href="#" class="btn btn-default btn-lg">กลับ</a>
         </div>
         <div class="pull-right">
-            <a href="#" class="btn btn-primary btn-lg">เป็นสถานะเป็นตรวจแล้ว</a>
+            <a href="@Url.Action("CheckedStudent", new { id = Model.id})" class="btn btn-primary btn-lg">เป็นสถานะเป็นตรวจแล้ว</a>
         </div>
     </div>
 

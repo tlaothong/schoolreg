@@ -7,19 +7,24 @@
 <h2>รายชื่อผู้สมัคร</h2>
 
 <div>
+
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#ผู้สมัครใหม่" role="tab" data-toggle="tab">ผู้สมัครใหม่</a></li>
         <li role="presentation"><a href="#ตรวจแล้ว" role="tab" data-toggle="tab">ตรวจแล้ว</a></li>
 
     </ul>
 
+
     <div id="myTabContent" class="tab-content">
 
         @*ผู้สมัครใหม่*@
+
         <div role="tabpanel" class="tab-pane fade active in" id="ผู้สมัครใหม่">
-            <form class="form-inline" role="form">
+@using (Html.BeginForm("CheckedStudents", "AdminManage", FormMethod.Post))
+{
+            <div class="form-inline" role="form">
                 <div class="pull-right">
-                    <button class="btn btn-lg btn-default">ตรวจ</button>
+                    <button class="btn btn-lg btn-default" type="submit">ตรวจ</button>
 
                     @*<div class="input-group">
                             <input type="text" class="form-control" placeholder="Search" />
@@ -28,7 +33,7 @@
                             </span>
                         </div>*@
                 </div>
-            </form>
+            </div>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -40,14 +45,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ( var item in Model)
+                    @foreach (var item in Model)
                     {
                         <tr>
-                            <td><input type="checkbox" /></td>
+                            <td><input type="checkbox" value="@item.id" name="selectedStudent" /></td>
                             <td>@item.StudentTitle@item.StudentFIrstName @item.StudentLastName</td>
                             <td>@item.CourseType</td>
                             <td>@item.CreateDateTime.ToString("MM/dd/yyyy")</td>
-                            <td><button class="btn btn-default">ดูรายละเอียด</button></td>
+                            <td><a class="btn btn-default" href="@Url.Action("StudentDetail", "AdminManage", new { id = item.id })">ดูรายละเอียด</a></td>
                         </tr>
                     }
                     @*<tr>
@@ -73,7 +78,9 @@
                     </tr>*@
                 </tbody>
             </table>
+}
         </div>
+
 
         @*ตรวจแล้ว*@
         <div role="tabpanel" class="tab-pane fade" id="ตรวจแล้ว">

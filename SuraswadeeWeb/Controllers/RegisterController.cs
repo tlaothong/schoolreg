@@ -35,6 +35,7 @@ namespace SuraswadeeWeb.Controllers
         public ActionResult RegisterCompleted(Student model)
         {
             var repo = new RegistrationRepository();
+            model.SchoolId = "1";
             repo.Register(model);
             return View();
         }

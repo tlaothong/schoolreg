@@ -103,7 +103,7 @@ namespace SuraswadeeWeb.Models
         /// <summary>
         /// 
         /// </summary>
-        public string StudentBirthDay { get; set; }
+        public DateTime StudentBirthDay { get; set; }
         /// <summary>
         /// 
         /// </summary>
