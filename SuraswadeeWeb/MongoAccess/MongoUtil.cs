@@ -12,7 +12,7 @@ namespace SuraswadeeWeb.MongoAccess
         private static IMongoClient _client;
         public static IMongoDatabase _database;
 
-        public MongoUtil()
+        static MongoUtil()
         {
             var connectionString = WebConfigurationManager.AppSettings["primaryConnectionString"];
             _client = new MongoClient(connectionString);
