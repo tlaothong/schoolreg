@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<SuraswadeeWeb.Models.Student>
+
 @{
     ViewBag.Title = "Index";
 }
@@ -39,7 +40,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    @foreach ( var item in Model)
+                    {
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>@item.StudentTitle@item.StudentFIrstName @item.StudentLastName</td>
+                            <td>@item.CourseType</td>
+                            <td>@item.CreateDateTime.ToString("MM/dd/yyyy")</td>
+                            <td><button class="btn btn-default">ดูรายละเอียด</button></td>
+                        </tr>
+                    }
+                    @*<tr>
                         <td><input type="checkbox" /></td>
                         <td>Mark</td>
                         <td>ประถม 1</td>
@@ -59,7 +70,7 @@
                         <td>ประถม 6</td>
                         <td>1/9/2016</td>
                         <td><button class="btn btn-default">ดูรายละเอียด</button></td>
-                    </tr>
+                    </tr>*@
                 </tbody>
             </table>
         </div>
