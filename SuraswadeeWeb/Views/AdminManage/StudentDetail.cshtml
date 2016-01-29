@@ -1,0 +1,213 @@
+﻿
+@{
+    ViewBag.Title = "StudentDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+
+<div class="well">
+    <h2 class="text-center">รายละเอียดการสมัคร</h2>
+
+    @* ข้อมูลผู้ปกครอง *@
+    <div>
+        <h3 class="text-center">ข้อมูลผู้ปกครอง</h3>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 control-label">ชื่อ-นามสกุล</label>
+                <div class="col-md-6">
+                    <h5>นาย พง พังงง</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">อยู่บ้านเลขที่</label>
+                <div class="col-md-6">
+                    <h5>191/2</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">หมู่ที่</label>
+                <div class="col-md-6">
+                    <h5>8</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ถนน</label>
+                <div class="col-md-6">
+                    <h5>เลี่ยงเมือง</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ตำบล</label>
+                <div class="col-md-6">
+                    <h5>เมืองเก่า</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">อำเภอ</label>
+                <div class="col-md-6">
+                    <h5>เมือง</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">จังหวัด</label>
+                <div class="col-md-6">
+                    <h5>ขอนแก่น</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">รหัสไปรษณี</label>
+                <div class="col-md-6">
+                    <h5>40000</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">อาชีพ</label>
+                <div class="col-md-6">
+                    <h5>รับราชการ</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">สถานที่ทำงาน</label>
+                <div class="col-md-6">
+                    <h5>บริษัท ฟฟฟฟฟฟ</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">หมายเลขโทรศัพท์ ผู้ปกครอง</label>
+                <div class="col-md-6">
+                    <h5>0850053368</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">มีฐานะเป็น</label>
+                <div class="col-md-6">
+                    <h5>ผู้ปกครอง</h5>
+
+                </div>
+            </div>
+        </form>
+    </div>
+    @* ข้อมูลนักเรียน *@
+    <div>
+        <h3 class="text-center">ข้อมูลนักเรียน</h3>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 control-label">หลักสูตรที่สมัคร</label>
+                <div class="col-md-6">
+                    <h5>เตรียมอนุบาล</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ปีการศึกษา</label>
+                <div class="col-md-6">
+                    <h5>2559</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ชื่อ-นามสกุล</label>
+                <div class="col-md-6">
+                    <h5>เด็กชาย แดง พังงง</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ชื่อเล่น</label>
+                <div class="col-md-6">
+                    <h5>แดง</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">วันเดือนปีเกิด</label>
+                <div class="col-md-6">
+                    <h5>4 เมษายน 2539</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">อายุ</label>
+                <div class="col-md-6">
+                    <h5>10 ขวบ</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">เคยศึกษาที่โรงเรียน</label>
+                <div class="col-md-6">
+                    <h5>ขอนแก่นวิทยายน</h5>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ระดับ</label>
+                <div class="col-md-6">
+                    <h5>เตรียมอนุบาล</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>       
+
+    @* หลักฐานและค่าธรรมเนียม *@
+    <div>
+        <h3 class="text-center">หลักฐานและค่าธรรมเนียม</h3>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 control-label">สำเนาทะเบียนบ้าน</label>
+                <div class="col-md-6">
+                     <a class="btn btn-default">Download</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">สำเนาสูติบัติ</label>
+                <div class="col-md-6">
+                    <a class="btn btn-default">Download</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">รูปถ่าย</label>
+                <div class="col-md-6">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">สมุดรายงานประจำตัวเด็ก (ถ้ามี)</label>
+                <div class="col-md-6">
+                    <a class="btn btn-default">Download</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ค่าธรรมเนียมการเรียน</label>
+                <div class="col-md-6">
+                    <div class="checkbox">
+                        <label>
+                            เบิกได้ จำนวน
+                        </label>
+                        <label>
+                            <span> 25,000 บาท</span>
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            เบิกไม่ได้ จำนวน
+                        </label>
+                        <label>
+                            <span> 0 บาท</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">ค่าธรรมเนียมอื่นๆ</label>
+                <div class="col-md-6">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div class="pull-left">
+            <a href="#" class="btn btn-default btn-lg">กลับ</a>
+        </div>
+        <div class="pull-right">
+            <a href="#" class="btn btn-primary btn-lg">ตรวจ</a>
+        </div>
+    </div>
+
+</div>
+
