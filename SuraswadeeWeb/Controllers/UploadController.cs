@@ -53,7 +53,7 @@ namespace SuraswadeeWeb.Controllers
                     fileInfo.MoveTo(localfileURL);
 
                     //Fix URL
-                    serverfileURL = new StringBuilder().Append("http://echecker-vanlek.azurewebsites.net").Append("/ImgUpload/Img/").Append(fileName).ToString();
+                    serverfileURL = new StringBuilder().Append("localhost").Append("/ImgUpload/Img/").Append(fileName).ToString();
                 }
 
 
