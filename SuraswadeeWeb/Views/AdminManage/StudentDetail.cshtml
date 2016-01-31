@@ -205,9 +205,12 @@
         <div class="pull-left">
             <a href="/AdminManage/Index" class="btn btn-default btn-lg">กลับ</a>
         </div>
-        <div class="pull-right">
-            <a href="@Url.Action("CheckedStudent", new { id = Model.id})" class="btn btn-primary btn-lg">เป็นสถานะเป็นตรวจแล้ว</a>
-        </div>
+        @if (!Model.IsVerified)
+        {
+            <div class="pull-right">
+                <a href="@Url.Action("CheckedStudent", new { id = Model.id})" class="btn btn-primary btn-lg">เป็นสถานะเป็นตรวจแล้ว</a>
+            </div>
+        }        
     </div>
 
 </div>

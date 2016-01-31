@@ -82,7 +82,9 @@ namespace SuraswadeeWeb.Repositories
         public IEnumerable<Student> SearchVerifiedStudent(string schoolId, string keyword, string courseType, string year)
         {
             var coltn = MongoUtil.GetCollection<Student>(tableName);
-            var result = coltn.Find(x => x.SchoolId == schoolId && x.CourseType == courseType && x.Year == year && x.IsVerified == true && (x.StudentFIrstName.Contains(keyword) || x.StudentLastName.Contains(keyword))).ToList();
+            //var result = coltn.Find(it => true).ToList();
+
+            var result = coltn.Find(x => x.SchoolId == schoolId && x.CourseType == courseType && x.Year == year && x.IsVerified == true &&(x.StudentFIrstName.Contains(keyword) || x.StudentLastName.Contains(keyword))).ToList();
             return result != null ? result : new List<Student>();
         }
 

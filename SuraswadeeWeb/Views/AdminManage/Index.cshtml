@@ -18,13 +18,12 @@
     <div id="myTabContent" class="tab-content">
 
         @*ผู้สมัครใหม่*@
-
         <div role="tabpanel" class="tab-pane fade active in" id="ผู้สมัครใหม่">
 @using (Html.BeginForm("CheckedStudents", "AdminManage", FormMethod.Post))
 {
             <div class="form-inline" role="form">
-                <div class="pull-right">
-                    <button class="btn btn-lg btn-default" type="submit">ตรวจ</button>
+                <div class="pull-right well-sm">
+                    <button class="btn btn-lg btn-primary" type="submit">เปลี่ยนสถานะเป็น"ตรวจแล้ว"</button>
 
                     @*<div class="input-group">
                             <input type="text" class="form-control" placeholder="Search" />
@@ -55,27 +54,6 @@
                             <td><a class="btn btn-default" href="@Url.Action("StudentDetail", "AdminManage", new { id = item.id })">ดูรายละเอียด</a></td>
                         </tr>
                     }
-                    @*<tr>
-                        <td><input type="checkbox" /></td>
-                        <td>Mark</td>
-                        <td>ประถม 1</td>
-                        <td>9/20/2015</td>
-                        <td><button class="btn btn-default">ดูรายละเอียด</button></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>Jacob</td>
-                        <td>อุบาล 2</td>
-                        <td>12/21/2015</td>
-                        <td><button class="btn btn-default">ดูรายละเอียด</button></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>Larry</td>
-                        <td>ประถม 6</td>
-                        <td>1/9/2016</td>
-                        <td><button class="btn btn-default">ดูรายละเอียด</button></td>
-                    </tr>*@
                 </tbody>
             </table>
 }
@@ -84,63 +62,33 @@
 
         @*ตรวจแล้ว*@
         <div role="tabpanel" class="tab-pane fade" id="ตรวจแล้ว">
-            <form class="form-inline" role="form">
+            @using (Html.BeginForm())
+            {
+            <div class="form-inline clearfix well-sm" role="form">
                 <div class="pull-right">
                     <div class="form-group">
-                        <select class="form-control">
-                            <option selected>ระดับการศึกษา</option>
-                            <option>เตรียมอนุบาล</option>
-                            <option>อนุบาลศึกษาปีที่ 1</option>
-                            <option>อนุบาลศึกษาปีที่ 2</option>
-                            <option>อนุบาลศึกษาปีที่ 3</option>
-                            <option>ประถมศึกษาปีที่ 1</option>
-                            <option>ประถมศึกษาปีที่ 2</option>
-                            <option>ประถมศึกษาปีที่ 3</option>
-                            <option>ประถมศึกษาปีที่ 4</option>
-                            <option>ประถมศึกษาปีที่ 5</option>
-                            <option>ประถมศึกษาปีที่ 6</option>
-                        </select>
+                        หลักสูตร
+                        @Html.DropDownList("CourseType", @ViewBag.CourseTypeList as List<SelectListItem>, new { @class = "form-control" })
                     </div>
                     <div class="form-group">
-                        <select class="form-control">
-                            <option selected>ปีการศึกษา</option>
-                            <option>2557</option>
-                        </select>
+                        ปีการศึกษา
+                        @Html.DropDownList("CourseYearList", @ViewBag.CourseYearList as List<SelectListItem>, new { @class = "form-control" })
                     </div>
-                    <input type="text" class="form-control" placeholder="ค้นหาจากชื่อ" />
-                    <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                    ชื่อ หรือ นามสกุล
+                    @Html.TextBox("Keyword", null, new { @type = "text", @class = "form-control", @placeholder = "ค้นหาจากชื่อ-นามสกุล" })
+                    <button class="btn btn-default" type="button" onclick="searchClick()">ค้นหา <i class="glyphicon glyphicon-search"></i></button>
                 </div>
-            </form>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>ชื่อ-สกุล</th>
-                        <th>หลักสูตร</th>
-                        <th>วันที่</th>
-                        <th>รายละเอียด</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Mark</td>
-                        <td>ประถม 1</td>
-                        <td>9/20/2015</td>
-                        <td><button class="btn btn-default">ดูรายละเอียด</button></td>
-                    </tr>
-                    <tr>
-                        <td>Jacob</td>
-                        <td>อุบาล 2</td>
-                        <td>12/21/2015</td>
-                        <td><button class="btn btn-default">ดูรายละเอียด</button></td>
-                    </tr>
-                    <tr>
-                        <td>Larry</td>
-                        <td>ประถม 6</td>
-                        <td>1/9/2016</td>
-                        <td><button class="btn btn-default">ดูรายละเอียด</button></td>
-                    </tr>
-                </tbody>
-            </table>
+            </div>
+            }
+            <div id="divTableView">
+                <br />
+                <h3 class="text-center">กรุณากดปุ่ม"ค้นหา"เพื่อค้นหารายการที่ต้องการ</h3>
+            </div>
+            <script>
+                function searchClick() {
+                    $("#divTableView").load("/AdminManage/SearchVerifyStudent?keyword=" + $("#Keyword").val() + "&courseType=" + $("#CourseType").val() + "&courseYearList=" + $("#CourseYearList").val());
+                }
+            </script>
         </div>
     </div>
 </div>

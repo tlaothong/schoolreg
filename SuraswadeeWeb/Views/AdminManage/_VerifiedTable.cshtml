@@ -1,0 +1,23 @@
+﻿@model IEnumerable<SuraswadeeWeb.Models.Student>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ชื่อ-สกุล</th>
+            <th>หลักสูตร</th>
+            <th>วันที่</th>
+            <th>รายละเอียด</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.StudentTitle@item.StudentFIrstName @item.StudentLastName</td>
+                <td>@ViewBag.CourseType</td>
+                <td>@item.CreateDateTime.ToString("dd/MM/yyyy")</td>
+                <td><a class="btn btn-default" href="@Url.Action("StudentDetail", "AdminManage", new { id = item.id })">ดูรายละเอียด</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

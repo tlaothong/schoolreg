@@ -24,6 +24,9 @@ namespace SuraswadeeWeb.Controllers
             var repo = new RegistrationRepository();
             var model = repo.GetPendingStudent("1");
 
+            ViewBag.CourseTypeList = CourseTypeList.GetAllList().ToList();
+            ViewBag.CourseYearList = CourseYearList.GetAllList().ToList();
+
             return View(model);
         }
         // GET: AdminManage
@@ -64,6 +67,15 @@ namespace SuraswadeeWeb.Controllers
                 repo.verify(students);
             }
             return RedirectToAction("Index");
+        }
+
+        public ActionResult SearchVerifyStudent(string keyword, string courseType, string courseYearList)
+        {
+            var repo = new RegistrationRepository();
+            string schoolId = "1";
+            var model = repo.SearchVerifiedStudent(schoolId, keyword, courseType, courseYearList);
+            ViewBag.CourseType = CourseTypeList.GetAllList().FirstOrDefault(it => it.Value == courseType).Text;
+            return PartialView("_VerifiedTable", model);
         }
     }
 }
