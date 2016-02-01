@@ -151,25 +151,37 @@
             <div class="form-group">
                 <label class="col-md-4 control-label">สำเนาทะเบียนบ้าน</label>
                 <div class="col-md-6">
-                     <a class="btn btn-default">Download</a>
+                    @if (Model.HomeLicenseURL != null)
+                    {
+                        <a class="btn btn-default" href="@Model.HomeLicenseURL" target="_blank">View</a>
+                    }
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">สำเนาสูติบัติ</label>
                 <div class="col-md-6">
-                    <a class="btn btn-default">Download</a>
+                    @if (Model.BornLicenseURL != null)
+                    {
+                        <a class="btn btn-default" href="@Model.BornLicenseURL" target="_blank">View</a>
+                    }
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">รูปถ่าย</label>
                 <div class="col-md-6">
-                    <a class="btn btn-default">Download</a>
+                    @if (Model.PicLicenseURL != null)
+                    {
+                        <a class="btn btn-default" href="@Model.PicLicenseURL" target="_blank">View</a>
+                    }
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">สมุดรายงานประจำตัวเด็ก (ถ้ามี)</label>
                 <div class="col-md-6">
-                    <a class="btn btn-default">Download</a>
+                    @if (Model.StudyBookLicenseURL != null)
+                    {
+                        <a class="btn btn-default" href="@Model.StudyBookLicenseURL" target="_blank">View</a>
+                    }
                 </div>
             </div>
             <div class="form-group">

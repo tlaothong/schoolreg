@@ -32,12 +32,30 @@ namespace SuraswadeeWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult RegisterCompleted(Student model)
+        public ActionResult RegisterCompleted(Student model, HttpPostedFileBase CoppyAddress, HttpPostedFileBase CopyBirth, HttpPostedFileBase StudentPic, HttpPostedFileBase ReportBook)
         {
+            var CopyAddressURL = Upload(CoppyAddress);
+            var CopyBirthURL = Upload(CopyBirth);
+            var StudentPicURL = Upload(StudentPic);
+            var ReportBookURL = Upload(ReportBook);
+            model.HomeLicenseURL = CopyAddressURL;
+            model.BornLicenseURL = CopyBirthURL;
+            model.PicLicenseURL = StudentPicURL;
+            model.StudyBookLicenseURL = ReportBookURL;
+
+
             var repo = new RegistrationRepository();
             model.SchoolId = "1";
             repo.Register(model);
             return View();
+        }
+
+        public string Upload(HttpPostedFileBase file)
+        {
+            var fileName = Guid.NewGuid().ToString() + ".jpg";
+            var fileURL = System.Web.HttpContext.Current.Server.MapPath("~/ImgUpload/Img/" + fileName);
+            file.SaveAs(fileURL);
+            return "/ImgUpload/Img/" + fileName;
         }
     }
 }
