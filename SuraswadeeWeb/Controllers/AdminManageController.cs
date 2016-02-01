@@ -12,6 +12,7 @@ namespace SuraswadeeWeb.Controllers
     public class AdminManageController : Controller
     {
         // GET: AdminManage
+        [Authorize]
         public ActionResult Index()
         {
             //if (User.Identity.IsAuthenticated)
