@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace SuraswadeeWeb.Controllers
-{
+{  
     public class RegisterController : Controller
     {
         //private IRegistrationRepository repo;
