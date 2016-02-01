@@ -14,8 +14,8 @@ namespace SuraswadeeWeb.Controllers
         // GET: AdminManage
         public ActionResult Index()
         {
-            if (User.Identity.IsAuthenticated)
-            {
+            //if (User.Identity.IsAuthenticated)
+            //{
                 //IEnumerable<Student> model = new List<Student>()
                 //{
                 //    new Student { StudentTitle="ดช.", StudentFIrstName="โฮโล", StudentLastName="โมไร่", CourseType="ประถมศึกษาปีที่ 1", CreateDateTime=new DateTime(2015,9,20) },
@@ -31,11 +31,11 @@ namespace SuraswadeeWeb.Controllers
                 ViewBag.CourseYearList = CourseYearList.GetAllList().ToList();
 
                 return View(model);
-            }
-            else
-            {
-                return RedirectToAction("");
-            }
+            //}
+            //else
+            //{
+            //    return RedirectToAction("");
+            //}
         }
         // GET: AdminManage
         public ActionResult StudentDetail(string id)

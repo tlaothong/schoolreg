@@ -7,88 +7,89 @@
 <h2>รายชื่อผู้สมัคร</h2>
 
 <div>
+    <div class="well">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#ผู้สมัครใหม่" role="tab" data-toggle="tab">ผู้สมัครใหม่</a></li>
+            <li role="presentation"><a href="#ตรวจแล้ว" role="tab" data-toggle="tab">ตรวจแล้ว</a></li>
 
-    <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#ผู้สมัครใหม่" role="tab" data-toggle="tab">ผู้สมัครใหม่</a></li>
-        <li role="presentation"><a href="#ตรวจแล้ว" role="tab" data-toggle="tab">ตรวจแล้ว</a></li>
-
-    </ul>
-
-
-    <div id="myTabContent" class="tab-content">
-
-        @*ผู้สมัครใหม่*@
-        <div role="tabpanel" class="tab-pane fade active in" id="ผู้สมัครใหม่">
-@using (Html.BeginForm("CheckedStudents", "AdminManage", FormMethod.Post))
-{
-            <div class="form-inline" role="form">
-                <div class="pull-right well-sm">
-                    <button class="btn btn-lg btn-primary" type="submit">เปลี่ยนสถานะเป็น"ตรวจแล้ว"</button>
-
-                    @*<div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search" />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
-                            </span>
-                        </div>*@
-                </div>
-            </div>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th><input id="checkAll" type="checkbox"></th>
-                        <th>ชื่อ-สกุล</th>
-                        <th>หลักสูตร</th>
-                        <th>วันที่</th>
-                        <th>รายละเอียด</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td><input type="checkbox" value="@item.id" name="selectedStudent" /></td>
-                            <td>@item.StudentTitle@item.StudentFIrstName @item.StudentLastName</td>
-                            <td>@item.CourseType</td>
-                            <td>@item.CreateDateTime.ToString("MM/dd/yyyy")</td>
-                            <td><a class="btn btn-default" href="@Url.Action("StudentDetail", "AdminManage", new { id = item.id })">ดูรายละเอียด</a></td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-}
-        </div>
+        </ul>
 
 
-        @*ตรวจแล้ว*@
-        <div role="tabpanel" class="tab-pane fade" id="ตรวจแล้ว">
-            @using (Html.BeginForm())
-            {
-            <div class="form-inline clearfix well-sm" role="form">
-                <div class="pull-right">
-                    <div class="form-group">
-                        หลักสูตร
-                        @Html.DropDownList("CourseType", @ViewBag.CourseTypeList as List<SelectListItem>, new { @class = "form-control" })
+        <div id="myTabContent" class="tab-content">
+
+            @*ผู้สมัครใหม่*@
+            <div role="tabpanel" class="tab-pane fade active in" id="ผู้สมัครใหม่">
+                @using (Html.BeginForm("CheckedStudents", "AdminManage", FormMethod.Post))
+                {
+                    <div class="form-inline" role="form">
+                        <div class="pull-right well-sm">
+                            <button class="btn btn-lg btn-primary" type="submit">เปลี่ยนสถานะเป็น"ตรวจแล้ว"</button>
+
+                            @*<div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                                    </span>
+                                </div>*@
+                        </div>
                     </div>
-                    <div class="form-group">
-                        ปีการศึกษา
-                        @Html.DropDownList("CourseYearList", @ViewBag.CourseYearList as List<SelectListItem>, new { @class = "form-control" })
-                    </div>
-                    ชื่อ หรือ นามสกุล
-                    @Html.TextBox("Keyword", null, new { @type = "text", @class = "form-control", @placeholder = "ค้นหาจากชื่อ-นามสกุล" })
-                    <button class="btn btn-default" type="button" onclick="searchClick()">ค้นหา <i class="glyphicon glyphicon-search"></i></button>
-                </div>
-            </div>
-            }
-            <div id="divTableView">
-                <br />
-                <h3 class="text-center">กรุณากดปุ่ม"ค้นหา"เพื่อค้นหารายการที่ต้องการ</h3>
-            </div>
-            <script>
-                function searchClick() {
-                    $("#divTableView").load("/AdminManage/SearchVerifyStudent?keyword=" + $("#Keyword").val() + "&courseType=" + $("#CourseType").val() + "&courseYearList=" + $("#CourseYearList").val());
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th><input id="checkAll" type="checkbox"></th>
+                                <th>ชื่อ-สกุล</th>
+                                <th>หลักสูตร</th>
+                                <th>วันที่</th>
+                                <th>รายละเอียด</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td><input type="checkbox" value="@item.id" name="selectedStudent" /></td>
+                                    <td>@item.StudentTitle@item.StudentFIrstName @item.StudentLastName</td>
+                                    <td>@item.CourseType</td>
+                                    <td>@item.CreateDateTime.ToString("MM/dd/yyyy")</td>
+                                    <td><a class="btn btn-default" href="@Url.Action("StudentDetail", "AdminManage", new { id = item.id })">ดูรายละเอียด</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
                 }
-            </script>
+            </div>
+
+
+            @*ตรวจแล้ว*@
+            <div role="tabpanel" class="tab-pane fade" id="ตรวจแล้ว">
+                @using (Html.BeginForm())
+            {
+                    <div class="form-inline clearfix well-sm" role="form">
+                        <div class="pull-right">
+                            <div class="form-group">
+                                หลักสูตร
+                                @Html.DropDownList("CourseType", @ViewBag.CourseTypeList as List<SelectListItem>, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                ปีการศึกษา
+                                @Html.DropDownList("CourseYearList", @ViewBag.CourseYearList as List<SelectListItem>, new { @class = "form-control" })
+                            </div>
+                            ชื่อ หรือ นามสกุล
+                            @Html.TextBox("Keyword", null, new { @type = "text", @class = "form-control", @placeholder = "ค้นหาจากชื่อ-นามสกุล" })
+                            <button class="btn btn-default" type="button" onclick="searchClick()">ค้นหา <i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                }
+                <div id="divTableView">
+                    <br />
+                    <h3 class="text-center">กรุณากดปุ่ม"ค้นหา"เพื่อค้นหารายการที่ต้องการ</h3>
+                </div>
+                <script>
+                    function searchClick() {
+                        $("#divTableView").load("/AdminManage/SearchVerifyStudent?keyword=" + $("#Keyword").val() + "&courseType=" + $("#CourseType").val() + "&courseYearList=" + $("#CourseYearList").val());
+                    }
+                </script>
+            </div>
         </div>
     </div>
 </div>
