@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace SuraswadeeWeb.Controllers
-{  
+{
     public class RegisterController : Controller
     {
         //private IRegistrationRepository repo;
@@ -16,7 +16,7 @@ namespace SuraswadeeWeb.Controllers
         //{
         //    this.repo = repo;
         //}
-               // GET: Register
+        // GET: Register
         public ActionResult Register()
         {
             var student = new Student();
@@ -52,27 +52,35 @@ namespace SuraswadeeWeb.Controllers
 
         public string Upload(HttpPostedFileBase file)
         {
-            if (file !=null)
+            try
+            {
+                if (file != null)
+                {
+
+                    string pic = System.IO.Path.GetFileName(file.FileName);
+                    string path = System.IO.Path.Combine(Server.MapPath("~/ImgUpload/Img/"), pic);
+                    // file is uploaded
+                    file.SaveAs(path);
+                    return "/ImgUpload/Img/" + pic;
+
+                    //var fileName = Guid.NewGuid().ToString() + ".jpg";
+                    //var fileURL = System.Web.HttpContext.Current.Server.MapPath("~/ImgUpload/Img/" + fileName);
+                    //file.SaveAs(fileURL);                 
+                    //return "/ImgUpload/Img/" + fileName;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+            catch (Exception e)
             {
 
-                string pic = System.IO.Path.GetFileName(file.FileName);
-                string path = System.IO.Path.Combine(Server.MapPath("~/ImgUpload/Img/"), pic);
-                // file is uploaded
-                file.SaveAs(path);
-                return "/ImgUpload/Img/" + pic;
-
-
-
-                //var fileName = Guid.NewGuid().ToString() + ".jpg";
-                //var fileURL = System.Web.HttpContext.Current.Server.MapPath("~/ImgUpload/Img/" + fileName);
-                //file.SaveAs(fileURL);
-                //return "/ImgUpload/Img/" + fileName;
+                throw e;
             }
-            else
-            {
-                return null;
-            }
-          
+
+
         }
     }
 }
