@@ -54,10 +54,19 @@ namespace SuraswadeeWeb.Controllers
         {
             if (file !=null)
             {
-                var fileName = Guid.NewGuid().ToString() + ".jpg";
-                var fileURL = System.Web.HttpContext.Current.Server.MapPath("~/ImgUpload/Img/" + fileName);
-                file.SaveAs(fileURL);
-                return "/ImgUpload/Img/" + fileName;
+
+                string pic = System.IO.Path.GetFileName(file.FileName);
+                string path = System.IO.Path.Combine(Server.MapPath("~/ImgUpload/Img/"), pic);
+                // file is uploaded
+                file.SaveAs(path);
+                return "/ImgUpload/Img/" + pic;
+
+
+
+                //var fileName = Guid.NewGuid().ToString() + ".jpg";
+                //var fileURL = System.Web.HttpContext.Current.Server.MapPath("~/ImgUpload/Img/" + fileName);
+                //file.SaveAs(fileURL);
+                //return "/ImgUpload/Img/" + fileName;
             }
             else
             {
