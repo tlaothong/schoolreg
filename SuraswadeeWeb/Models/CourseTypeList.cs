@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace SuraswadeeWeb.Models
 {
-    class CourseTypeList
+    public class CourseTypeList
     {
         public static IEnumerable<SelectListItem> GetAllList()
         {

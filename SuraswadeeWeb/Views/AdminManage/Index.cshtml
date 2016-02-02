@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<SuraswadeeWeb.Models.Student>
+@using SuraswadeeWeb.Models
 
 @{
     ViewBag.Title = "Index";
@@ -49,7 +50,7 @@
                                 <tr>
                                     <td><input type="checkbox" value="@item.id" name="selectedStudent" /></td>
                                     <td>@item.StudentTitle@item.StudentFIrstName @item.StudentLastName</td>
-                                    <td>@item.CourseType</td>
+                                    <td>@CourseTypeList.GetAllList().FirstOrDefault(it => it.Value == item.CourseType).Text</td>
                                     <td>@item.CreateDateTime.ToString("MM/dd/yyyy")</td>
                                     <td><a class="btn btn-default" href="@Url.Action("StudentDetail", "AdminManage", new { id = item.id })">ดูรายละเอียด</a></td>
                                 </tr>
