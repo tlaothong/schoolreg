@@ -52,17 +52,26 @@ namespace SuraswadeeWeb.Controllers
 
         public string Upload(HttpPostedFileBase file)
         {
-            if (file !=null)
+            try
             {
-                var fileName = Guid.NewGuid().ToString() + ".jpg";
-                var fileURL = System.Web.HttpContext.Current.Server.MapPath("~/ImgUpload/Img/" + fileName);
-                file.SaveAs(fileURL);
-                return "/ImgUpload/Img/" + fileName;
+                if (file != null)
+                {
+                    var fileName = Guid.NewGuid().ToString() + ".jpg";
+                    var fileURL = System.Web.HttpContext.Current.Server.MapPath("~/ImgUpload/Img/" + fileName);
+                    file.SaveAs(fileURL);
+                    return "/ImgUpload/Img/" + fileName;
+                }
+                else
+                {
+                    return null;
+                }
             }
-            else
+            catch (Exception e)
             {
-                return null;
+
+                throw e;
             }
+          
           
         }
     }
